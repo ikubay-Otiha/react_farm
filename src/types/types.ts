@@ -1,3 +1,4 @@
+// データの型を定義する
 export interface Task {
     id: string
     title: string
