@@ -2,7 +2,7 @@
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../app/store"
-import { Task } from "../types/types";
+import { Task } from "../types/types"
 
 // 型の定義
 export interface AppState {
@@ -49,5 +49,4 @@ export const { setEditedTask, resetEditedTask, toggleCsrfState } =
 // editedTask, csrfTokenExpを返すStateを定義
 export const selectTask = (state: RootState) => state.app.editedTask
 export const selectCsrfState = (state: RootState) => state.app.csrfTokenExp
-
 export default appSlice.reducer
