@@ -1,5 +1,4 @@
 // ReduxのSlice内容を作成
-
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../app/store"
 import { Task } from "../types/types"

@@ -39,6 +39,7 @@ export const useProcessAuth = () => {
             })
         }
     }
+    // ログアウト時にキャッシュをremoveする
     const logout = async () => {
         await logoutMutation.mutateAsync()
         queryClient.removeQueries('tasks')

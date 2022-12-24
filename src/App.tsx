@@ -11,16 +11,16 @@ function App() {
   const csrf = useAppSelector(selectCsrfState);
   useEffect(() => {
     // FastAPIへでGETメソッドCSRFトークンを要求し、axiosのdefault headerへセットする。
-    const getCerfToken = async () => {
+    const getCsrfToken = async () => {
       const res = await axios.get<CsrfToken>(
         `${process.env.REACT_APP_API_URL}/csrftoken`
       )
       // resに格納されたCSRFトークンをaxiosのdefault headerへセット
       axios.defaults.headers.common['X-CSRF-Token'] = res.data.csrf_token
     }
-    getCerfToken()
-  },[csrf])
-  return
+    getCsrfToken()
+  }, [csrf])
+  return(
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
@@ -31,6 +31,7 @@ function App() {
         </Route>
       </Switch>
     </BrowserRouter>
+  )
 }
 
 export default App
